@@ -84,7 +84,6 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:paddingTop="2dp"
-            android:co
             android:text="TextView"
             tools:layout_editor_absoluteX="118dp"
             tools:layout_editor_absoluteY="333dp" />
