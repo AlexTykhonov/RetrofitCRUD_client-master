@@ -1,5 +1,6 @@
 package com.example.retrofitcrud_client0;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -14,7 +15,7 @@ import retrofit2.http.Path;
 public interface BookInterface {
 
     @GET("/api/books/")
-    Call<List<Book>> getBooks();
+    Call<ArrayList<Book>> getBooks();
 
     @GET("/api/books/{id}")
     Call<Book> getBook(@Path("id") int id);

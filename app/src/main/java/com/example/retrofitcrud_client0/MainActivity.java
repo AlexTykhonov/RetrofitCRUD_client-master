@@ -3,9 +3,12 @@ package com.example.retrofitcrud_client0;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,16 +22,21 @@ public class MainActivity extends AppCompatActivity {
     Button btnAddBook;
     Button btnGetBookList;
     ListView listView;
+    RecyclerView recyclerView;
     BookInterface bookInterface;
-    List<Book> listOfBooks = new ArrayList<>();
-
+    ArrayList<Book> listOfBooks = new ArrayList<>();
+    RecycAdapter recycAdapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listView = findViewById(R.id.listView);
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recycAdapter = new RecycAdapter(this,listOfBooks);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(recycAdapter);
 
         btnAddBook = findViewById(R.id.btnAddBook);
         btnGetBookList = findViewById(R.id.btnGetBookList);
@@ -53,18 +61,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getBookList(){
-        Call<List<Book>> call = bookInterface.getBooks();
-        call.enqueue(new Callback<List<Book>>(){
+        Call<ArrayList<Book>> call = bookInterface.getBooks();
+        call.enqueue(new Callback<ArrayList<Book>>(){
             @Override
-            public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
+            public void onResponse(Call<ArrayList<Book>> call, Response<ArrayList<Book>> response) {
                 if(response.isSuccessful()){
                     listOfBooks = response.body();
-                }
-                listView.setAdapter(new BookAdapter(MainActivity.this, R.layout.listbook, listOfBooks));
+                } recycAdapter.setData(listOfBooks);
             }
 
             @Override
-            public void onFailure(Call<List<Book>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Book>> call, Throwable t) {
 
             }
         });
