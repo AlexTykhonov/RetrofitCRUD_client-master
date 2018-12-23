@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/Green">
 
 
     <LinearLayout
@@ -12,20 +13,38 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:paddingEnd="1dp"
+        android:background="@color/Gray"
+        android:padding="1dp">
 
         <TextView
             android:id="@+id/bookId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingEnd="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
             android:text="TextView"
             tools:layout_editor_absoluteX="140dp"
-            tools:layout_editor_absoluteY="251dp" />
+            tools:layout_editor_absoluteY="251dp"
+            android:textColor="#2aff00"
+            android:shadowColor="#235430"
+            android:shadowDx="-2.4"
+            android:shadowDy="-2.4"
+            android:shadowRadius="0.01"/>
 
         <TextView
             android:id="@+id/bookTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingEnd="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
             android:text="TextView"
             tools:layout_editor_absoluteX="80dp"
             tools:layout_editor_absoluteY="269dp" />
@@ -34,6 +53,11 @@
             android:id="@+id/bookAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingEnd="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
             android:text="TextView"
             tools:layout_editor_absoluteX="67dp"
             tools:layout_editor_absoluteY="158dp" />
@@ -42,6 +66,11 @@
             android:id="@+id/bookDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingEnd="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
             android:text="TextView"
             tools:layout_editor_absoluteX="49dp"
             tools:layout_editor_absoluteY="158dp" />
@@ -50,6 +79,12 @@
             android:id="@+id/bookPublished"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingEnd="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
+            android:co
             android:text="TextView"
             tools:layout_editor_absoluteX="118dp"
             tools:layout_editor_absoluteY="333dp" />
